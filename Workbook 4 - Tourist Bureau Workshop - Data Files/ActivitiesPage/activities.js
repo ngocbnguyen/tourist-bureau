@@ -126,20 +126,26 @@ window.onload = function () {
 };
 function loadCategories() {
   for (const category of categories) {
-    addOptionToList(category, category, categoryList);
+    addCategoryToList(category, category, categoryList);
   }
 }
+function addCategoryToList(text, value, list) {
+  let option = new Option(text, value);
+  list.appendChild(option);
+}
 
-function loadActivitiesList() {
+function loadActivitiesList(event) {
+  event.preventDefault();
   activityList.length = 0;
   let selectedCategory = categoryList.value;
   for (const activity of activities) {
     if (activity.category == selectedCategory) {
-        addOptionToList(activity.name, activity.id, activityList);
+        addOptionToList(activity.name, activity.id, activity.price.toFixed(2), activityList);
     }
   }
 }
-function addOptionToList(text, value, list) {
-  let option = new Option(text, value);
+function addOptionToList(text, value, number, list) {
+  let option = new Option(text, value, number);
+  option.innerText = `${text}  ($${number})`;
   list.appendChild(option);
 }

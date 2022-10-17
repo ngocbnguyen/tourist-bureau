@@ -23,11 +23,18 @@
         </li>
     </ul>
     </nav>
-    <form action="">
-        <select onchange="loadActivitiesList();" id="categoryList" class="form-select form-select-lg mb-4">
+    <form onchange="loadActivitiesList(event);" action="">
+        <select id="categoryList" class="form-select form-select-lg mb-4">
             <option value="">Select One</option>
         </select>
         <select class="form-select" id="activityList" size="6"></select>
+    </form>
+    <form action=""  class="d-flex flex-column align-items-center" >
+        <input type="number" name="ticket" id="ticketNumber" placeholder="No. of tickets" class="form-control mt-3 w-50" required>
+        <input type="email" name="email" id="email" placeholder="Email Address" class="form-control mt-3 w-50" required>
+        <button type="submit" class="form-control btn btn-secondary w-25 mt-3 ">Submit Payment</button>
+        <br>
+        <button type="reset" class="form-control mt-1 btn btn-secondary w-25 ">Reset</button>
     </form>
 </body>
 </html>
