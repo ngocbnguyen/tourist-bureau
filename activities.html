@@ -27,11 +27,34 @@
         <select id="categoryList" class="form-select form-select-lg mb-4">
             <option value="">Select One</option>
         </select>
-        <select class="form-select" id="activityList" size="6"></select>
+        <select class="form-select" id="activityList" size="4"></select>
     </form>
     <form action=""  class="d-flex flex-column align-items-center" >
         <input type="number" name="ticket" id="ticketNumber" placeholder="No. of tickets" class="form-control mt-3 w-50" required>
         <input type="email" name="email" id="email" placeholder="Email Address" class="form-control mt-3 w-50" required>
+        <h4 class="m-4">Payment</h4>
+        <div class="row gy-3">
+            <div class="col-md-6">
+              <label for="cc-name" class="form-label">Name on card</label>
+              <input type="text" class="form-control" required>
+              <small class="text-muted">Full name as displayed on card</small>
+            </div>
+
+            <div class="col-md-6">
+              <label for="cc-number" class="form-label">Credit card number</label>
+              <input type="text" class="form-control" required>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label">Expiration</label>
+              <input type="text" class="form-control" required>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" required>
+            </div>
+          </div>
         <button type="submit" class="form-control btn btn-secondary w-25 mt-3 ">Submit Payment</button>
         <br>
         <button type="reset" class="form-control mt-1 btn btn-secondary w-25 ">Reset</button>
